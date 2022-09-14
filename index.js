@@ -1,15 +1,15 @@
 function getPassword(){
     var letras = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    var passowrdLength = parseInt(prompt("escolha quantas letras"));
+    var passowrdLength = parseInt(prompt("escolha a quantidade de caracteres"));
     var passowrd = "";
     var verificacaoLetra = confirm("você deseja letras")
 
     var numeros = "01234567899876543210";
-    //var passowrdLength2 = parseInt(prompt("escolha quantos numeros"));
+    
     var verificacaoNumeros = confirm("deseja numeros?")
 
     var caracteresEspeciais = "!@#$%¨&*()'-_{}[]^~";
-    //var passowrdLength3 = parseInt(prompt("escolha quantos caracteres especiais"));
+    
     var verificacaoEspeciais = confirm("deseja especiais")
       
     var geral = letras + numeros + caracteresEspeciais; 
@@ -21,8 +21,8 @@ function getPassword(){
     for (i = 0; i < passowrdLength; i++){
 
         if(verificacaoLetra === true && verificacaoNumeros === true && verificacaoEspeciais === true){
-            var randomNumber = Math.floor(Math.random() * geral.length);
-        passowrd += geral.substring(randomNumber, randomNumber + 1);  
+                var randomNumber = Math.floor(Math.random() * geral.length);
+            passowrd += geral.substring(randomNumber, randomNumber + 1);  
         }
         if(verificacaoLetra === true && verificacaoNumeros === true && verificacaoEspeciais === false){
             var randomNumber = Math.floor(Math.random() * fEspeciais.length);
@@ -30,28 +30,29 @@ function getPassword(){
         } 
         if(verificacaoLetra === true && verificacaoNumeros === false && verificacaoEspeciais === true){
             var randomNumber = Math.floor(Math.random() * fnumeros.length);
-        passowrd += fnumeros.substring(randomNumber, randomNumber + 1);
+            passowrd += fnumeros.substring(randomNumber, randomNumber + 1);
         }
         if(verificacaoLetra === false && verificacaoNumeros === true && verificacaoEspeciais === true){
             var randomNumber = Math.floor(Math.random() * fletra.length);
-        passowrd += fletra.substring(randomNumber, randomNumber + 1);  
+            passowrd += fletra.substring(randomNumber, randomNumber + 1);  
         }
         if(verificacaoLetra === true && verificacaoNumeros === false && verificacaoEspeciais === false){
             var randomNumber = Math.floor(Math.random() * letras.length);
-        passowrd += letras.substring(randomNumber, randomNumber + 1);
+            passowrd += letras.substring(randomNumber, randomNumber + 1);
         }
         if(verificacaoLetra === false && verificacaoNumeros === true && verificacaoEspeciais === false){
             var randomNumber = Math.floor(Math.random() * numeros.length);
-        passowrd += numeros.substring(randomNumber, randomNumber + 1);
+            passowrd += numeros.substring(randomNumber, randomNumber + 1);
         }
         if(verificacaoLetra === false && verificacaoNumeros === false && verificacaoEspeciais === true){
             var randomNumber = Math.floor(Math.random() * caracteresEspeciais.length);
-        passowrd += caracteresEspeciais.substring(randomNumber, randomNumber + 1);
+            passowrd += caracteresEspeciais.substring(randomNumber, randomNumber + 1);
         }
         if(verificacaoLetra === false && verificacaoNumeros === false && verificacaoEspeciais === false){
-            alert("vai tomar no olho do seu cu ")
+            alert("impossivel gerar uma senha")
         }
-    }    }
+    }   
+ }
     else{
         alert("você não atigiu o minimo")
     }
